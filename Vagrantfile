@@ -16,9 +16,9 @@ Vagrant.configure("2") do |config|
     baseRH7.vm.box = "RH7.5_baserepo"
     #baseRH7.vm.box = "javier-lopez/rhel-7.4"
     #baseRH7.vm.box = "xianlin/rhel-7.4"
-    baseRH7.vm.hostname = "flinkRH7"
-    baseRH7.vm.network "private_network", ip: "192.168.60.139"
-    baseRH7.vm.provision "shell", :inline => "sudo echo '192.168.60.139 baseRH7.local baseRH7' >> /etc/hosts"
+    baseRH7.vm.hostname = "baseRH7"
+    baseRH7.vm.network "private_network", ip: "192.168.60.138"
+    baseRH7.vm.provision "shell", :inline => "sudo echo '192.168.60.138 baseRH7.local baseRH7' >> /etc/hosts"
     baseRH7.vm.provision "ansible" do |ansible|
       ansible.playbook = "deploy_baseRH7.yml"
       ansible.inventory_path = "vagrant_hosts"

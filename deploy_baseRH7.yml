@@ -1,5 +1,7 @@
 - hosts: baseRH7
   vars:  
+    _uid: ""
+    _pwd: ""
     custom_repo: true
     java_link: https://drive.google.com/open?id=1bSq7I3MY3SvY4MHfowEyNq3l-sFMJa8B
     flink_archive: https://www.apache.org/dyn/closer.lua/flink/flink-1.7.1/flink-1.7.1-bin-hadoop28-scala_2.11.tgz
@@ -11,7 +13,15 @@
   become_method: sudo
   pre_tasks:
     - name: register RHEL7.5
-      command: "/usr/bin/subscription-manager register --username <name> --password <password> --auto-attach"
+      command: "/usr/bin/subscription-manager register --username {{_uid}} --password {{_pwd}} --auto-attach"
+#     command: "/usr/bin/subscription-manager register --username <name> --password <password> --auto-attach"
+
+    - name: list available repos
+      shell: /usr/bin/subscription-manager repos --list
+      register: repos_list
+    - debug:
+        var: repos_list
+        verbosity: 3
   tasks:
     - name: install libselinux-python
       yum:
