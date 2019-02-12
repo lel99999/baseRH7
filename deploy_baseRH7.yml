@@ -64,6 +64,8 @@
       shell: pip install gdown
     - name: use gdown to download jdk1.8.x from google drive
       shell: gdown https://drive.google.com/uc?id=1bSq7I3MY3SvY4MHfowEyNq3l-sFMJa8B
+    - name: use gdown to download custom dev_repo from google drive
+      shell: gdown https://https://drive.google.com/uc?id=139Z0MfyT0WVWIzP_uwM2KxPCrfYs_vUV
     - name: download flink
       shell: wget http://ftp.wayne.edu/apache/flink/flink-1.7.1/flink-1.7.1-bin-hadoop28-scala_2.11.tgz -P /tmp
     - name: unpack flink
