@@ -22,16 +22,16 @@
     - name: register RHEL7 repo
       command: "/usr/bin/subscription-manager repos --enable=rhel-7-server-rpms --enable=rhel-7-server-extras-rpms --enable=rhel-7-server-optional-rpms"
     - name: register RHEL7 RHSCL Repo
-      shell: "/usr/bin/subscription-manager repos --enable=rhel-server-rhscl-7-rpms"
+      command: "/usr/bin/subscription-manager repos --enable=rhel-server-rhscl-7-rpms"
     - name: register RHEL7 DevTools
-      shell: "/usr/bin/subscription-manager repos --enable=rhel-7-server-devtools-rpms"
+      command: "/usr/bin/subscription-manager repos --enable=rhel-7-server-devtools-rpms"
     - name: list RHEL enabled repos
-      shell: "/usr/bin/subscription-manager repos --list-enabled"
+      command: "/usr/bin/subscription-manager repos --list-enabled"
       register: enabled_repos
     - debug:
         msg: "RHEL Enabled Repos: {{ enabled_repos }}"    
 #   - name: list available repos
-#     shell: /usr/bin/subscription-manager repos --list
+#     command: /usr/bin/subscription-manager repos --list
 #     register: repos_list
 #   - debug:
 #       msg: "RH Repolist: {{ repos_list }}"
