@@ -4,6 +4,12 @@ Base Image using RHEL 7 Subscription Management with Satellite Repos
 ### Sign up for RedHat Developer Subscription Account
 Developer Portal (https://developers.redhat.com/)
 
+__Benefits__:
+
+* Access to RedHat Knowledgebase (RedHat Account required)
+* RedHat License Entitlements - Registered/Licensed RedHat Instances for Development (Non-production)
+* Access to RedHat Software and Repositories
+
 Information regarding RedHat Developer Program (https://developers.redhat.com/blog/2016/03/31/no-cost-rhel-developer-subscription-now-available/)
 
 ### Use RedHat AccountID/Password for Ansible Scripts
